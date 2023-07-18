@@ -1,0 +1,22 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+:root {
+  --add: #c760e1;
+  --search: #ffe600;
+  --info: #ff1249;
+}
+.app {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}

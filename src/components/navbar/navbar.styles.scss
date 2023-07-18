@@ -1,0 +1,33 @@
+.navbar {
+  ul {
+    display: flex;
+    gap: 1rem;
+
+    li {
+      width: 44px;
+      height: 44px;
+      border: 3px solid;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      cursor: pointer;
+
+      &:first-child {
+        border-color: var(--add);
+        color: var(--add);
+        border-radius: 50% 50% 0 50%;
+      }
+      &:nth-child(2) {
+        border-color: var(--info);
+        color: var(--info);
+        border-radius: 50% 50% 0 0;
+      }
+      &:last-child {
+        border-color: var(--search);
+        color: var(--search);
+        border-radius: 50% 50% 50% 0;
+      }
+    }
+  }
+}
