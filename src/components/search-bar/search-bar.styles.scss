@@ -4,17 +4,8 @@
   display: flex;
   justify-content: space-between;
 
-  #search-bar {
-    width: 80%;
-    border: none;
-    border-bottom: 2px solid var(--search);
-    outline: none;
-    padding: 10px;
-  }
-  .add-button {
-    width: 20%;
-    border: 2px solid var(--search);
-    border-radius: 16px 0 16px 0;
-    background-color: transparent;
+  .search-bar {
+    width: 100%;
+    border-color: var(--search) !important;
   }
 }

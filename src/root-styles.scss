@@ -1,22 +1,54 @@
-
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 * {
   padding: 0;
   margin: 0;
   text-decoration: 0;
   list-style: none;
   box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
 }
 :root {
   --add: #c760e1;
   --search: #ffe600;
   --info: #ff1249;
+  --backGround: rgb(33, 33, 33);
 }
 .app {
   width: 100%;
   min-height: 100vh;
-  padding-top: 8vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
+  justify-content: center;
+  padding-top: 8vh;
+  background-color: var(--backGround);
+
+  .container {
+    width: 460px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 18px;
+
+    .header {
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: var(--info);
+      letter-spacing: 0.5px;
+      text-transform: capitalize;
+    }
+
+    .input {
+      border: none;
+      border-bottom: 3px solid;
+      outline: none;
+      padding: 10px;
+      background-color: transparent;
+      color: whitesmoke;
+
+      &::placeholder {
+        font-style: italic;
+        color: rgba(245, 245, 245, 0.4);
+      }
+    }
+  }
 }

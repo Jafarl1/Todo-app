@@ -1,33 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/navbar/navbar.component";
 import SearchBar from "./components/search-bar/search-bar.component";
 import TodoList from "./components/todo-list/todo-list.component";
 import "./root-styles.scss";
+import AddTodo from "./components/add-todo/add-todo.component";
+import Info from "./components/info/info.component"
 
 function App() {
 
+  const [navbarState, setNavbarState] = useState("add");
+
   const [todos, setTodos] = useState([]);
-  const [searchBarValue, setSearchBarValue] = useState("");
+  const [filteredTodos, setFilteredTodos] = useState([]);
 
-  const handleChange = (event) => {
-    setSearchBarValue(event.target.value)
-  };
+  useEffect(() => {
+    setFilteredTodos(todos)
+  }, [todos]);
 
-  const addTodo = () => {
-    searchBarValue
-      ? setTodos([...todos, searchBarValue])
-      : alert('Fill the blank please')
-  };
-
-  console.log(todos);
 
   return (
     <>
       <div className="app">
-        <h1>Todo app</h1>
-        <Navbar />
-        <SearchBar handleChange={handleChange} addTodo={addTodo} />
-        <TodoList todos={todos} />
+        <div className="container">
+          <h1 className="header">
+            my diary
+          </h1>
+          <Navbar setNavbarState={setNavbarState} />
+          {
+            navbarState === "search"
+              ? <SearchBar
+                todos={todos}
+                setFilteredTodos={setFilteredTodos}
+              />
+              : navbarState === "add"
+                ? <AddTodo todos={todos} setTodos={setTodos} />
+                : ""
+          }
+          {
+            navbarState === "info"
+              ? <Info />
+              : <TodoList todos={filteredTodos} setTodos={setTodos} />
+          }
+        </div>
       </div>
     </>
   )

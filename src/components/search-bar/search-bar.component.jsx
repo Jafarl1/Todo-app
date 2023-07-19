@@ -1,7 +1,16 @@
 /* eslint-disable react/prop-types */
 import "./search-bar.styles.scss"
 
-export default function SearchBar({ handleChange, addTodo }) {
+export default function SearchBar({ todos, setFilteredTodos }) {
+
+  const handleSearchInput = (event) => {
+    const currentValue = event.target.value;
+    const filtered = todos.filter(todo => todo.todo.toLowerCase().includes(currentValue.toLowerCase()));
+    setFilteredTodos(filtered);
+  };
+
+
+
 
   return (
     <>
@@ -9,13 +18,10 @@ export default function SearchBar({ handleChange, addTodo }) {
         <input
           type="search"
           name="search-bar"
-          id="search-bar"
+          className="input search-bar"
           placeholder="Search"
-          onChange={handleChange}
+          onChange={handleSearchInput}
         />
-        <button className="add-button" onClick={addTodo}>
-          Add todo
-        </button>
       </div>
     </>
   )

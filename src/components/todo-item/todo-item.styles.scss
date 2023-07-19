@@ -1,0 +1,54 @@
+.todo-item {
+  width: 100%;
+  padding: 12px;
+  box-shadow: 0px 0px 5px 0px #ffffff4d;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: whitesmoke;
+
+  .item-info {
+    display: flex;
+    gap: 8px;
+    max-width: 66%;
+    overflow-x: hidden;
+
+    .checked {
+        text-decoration: line-through;
+    }
+  }
+
+  .buttons-group {
+    display: flex;
+    gap: 12px;
+
+    button {
+      width: 33px;
+      height: 33px;
+      border-radius: 50%;
+      padding: 8px;
+      background-color: transparent;
+      cursor: pointer;
+      transition: 0.2s;
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:first-child {
+        border: 2px solid greenyellow;
+        color: greenyellow;
+      }
+      &:nth-child(2) {
+        border: 2px solid darkcyan;
+        color: darkcyan;
+      }
+      &:last-child {
+        border: 2px solid tomato;
+        color: tomato;
+      }
+    }
+  }
+}

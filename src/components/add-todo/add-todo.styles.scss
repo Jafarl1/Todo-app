@@ -1,0 +1,20 @@
+.add-todo-component {
+  width: 440px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+
+  .add-todo-input {
+    width: 80%;
+    border-color: var(--add) !important;
+  }
+
+  .add-todo-button {
+    width: 20%;
+    border: 3px solid var(--add);
+    color: var(--add);
+    background-color: transparent;
+    border-radius: 16px 0 16px 0;
+    cursor: pointer;
+  }
+}
