@@ -9,7 +9,6 @@ import Info from "./components/info/info.component"
 function App() {
 
   const [navbarState, setNavbarState] = useState("add");
-
   const [todos, setTodos] = useState([]);
   const [filteredTodos, setFilteredTodos] = useState([]);
 
